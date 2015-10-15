@@ -63,3 +63,4 @@ Plug 'vim-scripts/SyntaxComplete'
 Plug 'walm/jshint.vim'
 
 Plug 'scrooloose/nerdtree'
+Plug 'groenewege/vim-less'
