@@ -31,3 +31,13 @@ set sessionoptions=blank,curdir,folds,help,tabpages,winsize
 
 " Improve encryption.
 " set cryptmethod=blowfish2
+
+" Enable OsX clipboard integration (requires vim >= 7.3)
+set clipboard=unnamed
+
+set number
+set mouse=a
+set t_Co=256
+
+syntax enable
+

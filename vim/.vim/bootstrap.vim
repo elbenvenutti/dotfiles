@@ -11,8 +11,3 @@ for file in split(glob(Dot('modules/*.vim')), '\n')
   execute 'source' file
 endfor
 
-:set number
-:set mouse=a
-
-:syntax enable
-
