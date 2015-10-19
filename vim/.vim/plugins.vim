@@ -64,3 +64,4 @@ Plug 'walm/jshint.vim'
 
 Plug 'scrooloose/nerdtree'
 Plug 'groenewege/vim-less'
+Plug 'burnettk/vim-angular'

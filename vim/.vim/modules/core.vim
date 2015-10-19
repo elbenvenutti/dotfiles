@@ -36,7 +36,6 @@ set sessionoptions=blank,curdir,folds,help,tabpages,winsize
 set clipboard=unnamed
 
 set number
-set mouse=a
 set t_Co=256
 
 syntax enable
