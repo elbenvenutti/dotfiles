@@ -40,3 +40,4 @@ set t_Co=256
 
 syntax enable
 
+set ttymouse=xterm2
