@@ -1,6 +1,6 @@
 " This is the main plugin list, sourced by modules/plugins.vim
-" " Configuration goes in the appropriate modules/plugins/*.vim file.
-" " So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
+" Configuration goes in the appropriate modules/plugins/*.vim file.
+" So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
 
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'Keithbsmiley/tmux.vim'
@@ -63,5 +63,7 @@ Plug 'vim-scripts/SyntaxComplete'
 Plug 'walm/jshint.vim'
 
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'groenewege/vim-less'
 Plug 'burnettk/vim-angular'
+Plug 'christoomey/vim-tmux-navigator'
