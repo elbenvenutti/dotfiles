@@ -1,0 +1,2 @@
+" colorscheme distinguished
+colorscheme OceanicNext

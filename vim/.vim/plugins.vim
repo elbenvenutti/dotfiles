@@ -4,7 +4,7 @@
 
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'Keithbsmiley/tmux.vim'
-Plug 'Lokaltog/vim-distinguished'
+" Plug 'Lokaltog/vim-distinguished'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Olical/vim-enmasse'
 Plug 'Olical/vim-expand'
@@ -70,3 +70,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'dkprice/vim-easygrep'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'tpope/vim-obsession'
+Plug 'lambdatoast/elm.vim'
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'yosiat/oceanic-next-vim'
