@@ -73,3 +73,4 @@ Plug 'tpope/vim-obsession'
 Plug 'lambdatoast/elm.vim'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'yosiat/oceanic-next-vim'
+Plug 'ervandew/supertab'

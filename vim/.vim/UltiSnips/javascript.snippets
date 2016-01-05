@@ -1,0 +1,39 @@
+snippet describe "describe" b
+describe('$1', () => {
+$0
+});
+endsnippet
+
+snippet it "it" b
+it('$1', () => {
+    $0
+});
+endsnippet
+
+snippet expect "expect" b
+expect($1).to.$0;
+endsnippet
+
+snippet beforeEach "beforeEach" b
+beforeEach(${1:() => {
+    $0
+}});
+endsnippet
+
+snippet service "angular.module('...').service('...', (...) => {...});" b
+angular.module('$1').service('$2', ($3) => {
+    $0
+});
+endsnippet
+
+snippet directive "angular.module('...').directive('...', (...) => {...});" b
+angular.module('$1').directive('$2', ($3) => ({
+    $0
+}));
+endsnippet
+
+snippet v=> "var ... = (...) => ..." b
+var $1 = ($2) => ${3:{
+    $0
+}};
+endsnippet
