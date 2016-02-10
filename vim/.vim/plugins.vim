@@ -75,3 +75,4 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'yosiat/oceanic-next-vim'
 Plug 'ervandew/supertab'
 Plug 'leafgarland/typescript-vim'
+Plug 'nikvdp/ejs-syntax'
