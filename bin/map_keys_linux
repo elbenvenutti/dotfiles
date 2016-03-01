@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+xmodmap -e 'keycode 66 = Control_L'
+xmodmap -e 'clear Lock'
+xmodmap -e 'add Control = Control_L'
+~/projects/xcape/xcape -e 'Control_L=Escape'
