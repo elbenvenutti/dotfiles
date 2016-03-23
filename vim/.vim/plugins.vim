@@ -32,7 +32,7 @@ Plug 'helino/vim-json'
 Plug 'junegunn/vim-easy-align'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mhinz/vim-signify'
-" Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
 Plug 'raymond-w-ko/vim-niji'
