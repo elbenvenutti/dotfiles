@@ -43,3 +43,9 @@ syntax enable
 set ttymouse=xterm2
 
 set encoding=utf8
+
+" Persistent undo history
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
