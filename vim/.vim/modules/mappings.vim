@@ -6,3 +6,5 @@ nnoremap <c-l> <c-w>l
 
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
+
+nnoremap K i<CR><esc>

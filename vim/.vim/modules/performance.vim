@@ -4,3 +4,5 @@ set ttyfast
 
 " Stops macros rendering every step.
 set lazyredraw
+
+set timeoutlen=1000 ttimeoutlen=10
