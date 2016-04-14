@@ -10,8 +10,8 @@ set splitbelow
 set splitright
 
 " Set a default indent, but vim-sleuth should adjust it.
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Enable mouse. Great for resizing windows and keeping co-workers sane.
@@ -44,8 +44,9 @@ set ttymouse=xterm2
 
 set encoding=utf8
 
-" Persistent undo history
 if has("persistent_undo")
     set undodir=~/.undodir/
     set undofile
 endif
+
+set wildmode=longest,list
