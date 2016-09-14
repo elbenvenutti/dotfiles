@@ -8,3 +8,9 @@ nnoremap <silent> <leader>u :UndotreeToggle<CR>
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
 nnoremap K i<CR><esc>
+
+" workaround capslock as escape timeouts
+inoremap :w<CR> <esc>:w<CR>
+inoremap :wq<CR> <esc>:wq<CR>
+inoremap :q<CR> <esc>:q<CR>
+inoremap :qa<CR> <esc>:qa<CR>
