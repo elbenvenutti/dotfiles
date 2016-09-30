@@ -14,3 +14,8 @@ inoremap :w<CR> <esc>:w<CR>
 inoremap :wq<CR> <esc>:wq<CR>
 inoremap :q<CR> <esc>:q<CR>
 inoremap :qa<CR> <esc>:qa<CR>
+
+"foldmethods
+nnoremap <leader>zi :setlocal foldmethod=indent<cr>
+nnoremap <leader>zs :setlocal foldmethod=syntax<cr>
+nnoremap <leader>zm :setlocal foldmethod=manual<cr>
