@@ -50,3 +50,9 @@ if has("persistent_undo")
 endif
 
 set wildmode=longest,list
+
+function! Light()
+    set background=light
+    let g:indent_guides_auto_colors=1
+    colorscheme solarized
+endfunction
