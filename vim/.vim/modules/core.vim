@@ -33,7 +33,7 @@ set sessionoptions=blank,curdir,folds,help,tabpages,winsize
 " set cryptmethod=blowfish2
 
 " Enable OsX clipboard integration (requires vim >= 7.3)
-set clipboard=unnamed
+" set clipboard=unnamed
 
 set number
 set t_Co=256
