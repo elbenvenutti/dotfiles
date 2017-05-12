@@ -21,17 +21,17 @@ tmux select-layout -t $WORK_WINDOW main-vertical
 tmux resize-pane -t $WORK_WINDOW.2 -x 80
 
 tmux send-keys -t $WORK_WINDOW.1 C-m cd Space $WORKDIR C-m vim Space -S Space Session.vim C-m
-tmux send-keys -t $WORK_WINDOW.2 C-m cd Space $WORKDIR C-m npm Space run Space flow:watch C-m
-tmux send-keys -t $WORK_WINDOW.3 C-m cd Space $WORKDIR C-m npm Space run Space lint:watch C-m
-tmux send-keys -t $WORK_WINDOW.4 C-m cd Space $WORKDIR C-m npm Space run Space test:unit:watch C-m
-tmux send-keys -t $WORK_WINDOW.5 C-m cd Space $WORKDIR C-m npm Space run Space test:integration:watch C-m
+tmux send-keys -t $WORK_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space flow:watch C-m
+tmux send-keys -t $WORK_WINDOW.3 C-m cd Space $WORKDIR C-m yarn Space run Space lint:watch C-m
+tmux send-keys -t $WORK_WINDOW.4 C-m cd Space $WORKDIR C-m yarn Space run Space test:unit:watch C-m
+tmux send-keys -t $WORK_WINDOW.5 C-m cd Space $WORKDIR C-m yarn Space run Space test:integration:watch C-m
 
 tmux new-window -n "$SRV_NAME"
 tmux split-window -t $SRV_WINDOW -v
 tmux split-window -t $SRV_WINDOW -v
 
-tmux send-keys -t $SRV_WINDOW.1 C-m cd Space $WORKDIR C-m npm Space run Space build:watch C-m
-tmux send-keys -t $SRV_WINDOW.2 C-m cd Space $WORKDIR C-m npm Space run Space start:watch C-m
+tmux send-keys -t $SRV_WINDOW.1 C-m cd Space $WORKDIR C-m yarn Space run Space build:watch C-m
+tmux send-keys -t $SRV_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space start:watch C-m
 tmux send-keys -t $SRV_WINDOW.3 C-m cd Space $WORKDIR C-m tail Space -f Space logs/$PROJECT_NAME.log C-m
 
 tmux select-layout -t $SRV_WINDOW even-horizontal
