@@ -59,6 +59,7 @@ Plug 'mbbill/undotree'
 Plug 'flowtype/vim-flow'
 Plug 'bkad/CamelCaseMotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'
