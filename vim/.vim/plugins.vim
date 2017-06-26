@@ -15,9 +15,8 @@ Plug 'embear/vim-localvimrc'
 Plug 'guns/vim-sexp'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
-Plug 'helino/vim-json'
 Plug 'junegunn/vim-easy-align'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'marijnh/tern_for_vim', { 'do': 'yarn' }
 Plug 'mhinz/vim-signify'
 Plug 'mxw/vim-jsx'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -60,6 +59,7 @@ Plug 'flowtype/vim-flow'
 Plug 'bkad/CamelCaseMotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'elzr/vim-json'
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'
