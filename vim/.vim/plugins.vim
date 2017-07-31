@@ -60,6 +60,9 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'elzr/vim-json'
+" Plug 'Chiel92/vim-autoformat'
+Plug 'djoshea/vim-autoread'
+Plug 'sukima/xmledit'
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'

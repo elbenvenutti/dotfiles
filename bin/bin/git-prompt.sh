@@ -1,6 +1,6 @@
 #Display git branch on prompt
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 function proml {
@@ -13,7 +13,7 @@ function proml {
   local  LIGHT_GRAY="\[\033[0;37m\]"
   local     DEFAULT="\[\033[0m\]"
 
-  export PS1="\u@\h:$GREEN\W $RED\$(parse_git_branch)$DEFAULT\$ "
+  export PS1="\u@\h$GREEN \W$RED\$(parse_git_branch)$DEFAULT "
   export PROMPT_COMMAND="echo -ne \"\033]0;\$(parse_git_branch)\${PWD##*/}\007\""
 }
 
