@@ -24,3 +24,6 @@ nnoremap <leader>l :call Light()<cr>
 nnoremap <leader>0 :redraw!<cr>
 
 nnoremap <leader>gf <C-w>vgf
+
+nnoremap [w :tabnext<cr>
+nnoremap ]w :tabprev<cr>
