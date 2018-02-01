@@ -35,6 +35,10 @@ set sessionoptions=blank,curdir,folds,help,tabpages,winsize
 " Use system clipboard
 set clipboard=unnamedplus
 
+if has('osx')
+    set clipboard=unnamed
+endif
+
 set number
 set t_Co=256
 
