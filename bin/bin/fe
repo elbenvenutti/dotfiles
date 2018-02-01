@@ -20,7 +20,7 @@ tmux split-window -t $WORK_WINDOW -v
 tmux select-layout -t $WORK_WINDOW main-vertical
 tmux resize-pane -t $WORK_WINDOW.2 -x 80
 
-tmux send-keys -t $WORK_WINDOW.1 C-m cd Space $WORKDIR C-m vim Space -S Space Session.vim C-m
+tmux send-keys -t $WORK_WINDOW.1 C-m cd Space $WORKDIR C-m NODE_PATH=src Space vim Space -S Space Session.vim C-m
 tmux send-keys -t $WORK_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space flow:watch C-m
 tmux send-keys -t $WORK_WINDOW.3 C-m cd Space $WORKDIR C-m yarn Space run Space lint:watch C-m
 tmux send-keys -t $WORK_WINDOW.4 C-m cd Space $WORKDIR C-m yarn Space run Space test:unit:watch C-m
