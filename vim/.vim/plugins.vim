@@ -67,6 +67,8 @@ Plug 'junkblocker/patchreview-vim'
 Plug 'codegram/vim-codereview'
 Plug 'avakhov/vim-yaml'
 
+Plug 'heavenshell/vim-jsdoc'
+
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
