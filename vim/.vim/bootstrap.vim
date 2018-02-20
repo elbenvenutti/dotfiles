@@ -2,6 +2,7 @@
 set nocompatible
 
 let mapleader="\<Space>"
+let maplocalleader="\<Space>"
 nnoremap <Space> <Nop>
 
 " Wraps paths to make them relative to this directory.
