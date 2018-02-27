@@ -60,3 +60,7 @@ function! Light()
     let g:indent_guides_auto_colors=1
     colorscheme solarized
 endfunction
+
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+endif
