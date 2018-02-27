@@ -3,14 +3,26 @@ import $1 from '$2';
 $0
 endsnippet
 
-snippet describe "describe" b
+snippet describe "describe('...', () => {});" b
 describe('$1', () => {
   $0
 });
 endsnippet
 
-snippet it "it" b
+snippet describedone "describe('...', done => {});" b
+describe('$1', done => {
+  $0
+});
+endsnippet
+
+snippet it "it('...', () => {});" b
 it('$1', () => {
+  $0
+});
+endsnippet
+
+snippet itdone "it('...', done => {...})" b
+it('$1', done => {
   $0
 });
 endsnippet
@@ -43,8 +55,26 @@ angular.module('$1').directive('$2', ($3) => ({
 }));
 endsnippet
 
-snippet v=> "var ... = (...) => ..." b
-var $1 = ($2) => ${3:{
-    $0
+snippet constarrow "const ... = ... => ..." b
+const $1 = $2 => ${3:{
+  $0
 }};
+endsnippet
+
+snippet constarrowpar "const ... = (...) => ..." b
+const $1 = ($2) => ${3:{
+  $0
+}};
+endsnippet
+
+snippet importlodash "import ... from 'lodash/fp/...';" b
+import $1 from 'lodash/fp/$1';
+endsnippet
+
+snippet importdefault "import ... from '...';" b
+import $1 from '$1';
+endsnippet
+
+snippet import{} "import {...} from '...';" b
+import {$1} from '$0';
 endsnippet
