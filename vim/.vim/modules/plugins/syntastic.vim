@@ -4,3 +4,15 @@ let g:syntastic_javascript_checkers = ['eslint', 'jshint', 'standard']
 " needs 'brew install tidy-html5'
 let g:syntastic_html_tidy_exec = 'tidy'
 let g:syntastic_always_populate_loc_list = 0
+
+nnoremap <leader>sl :call SyntasticLocListToggle()<cr>
+
+function! SyntasticLocListToggle()
+  if g:syntastic_always_populate_loc_list
+    lclose
+    let g:syntastic_always_populate_loc_list = 0
+  else
+    lopen
+    let g:syntastic_always_populate_loc_list = 1
+  endif
+endfunction
