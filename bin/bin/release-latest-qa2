@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+docker start nessie-cli
+
+latest_fuzzylumpkins=$(docker exec nessie-cli nessie-app-version fuzzylumpkins | grep master | cut -d ' ' -f1 | head -n 1)
+latest_him=$(docker exec nessie-cli nessie-app-version him | grep master | cut -d ' ' -f1 | head -n 1)
+latest_mojojojo=$(docker exec nessie-cli nessie-app-version mojo-jojo | grep master | cut -d ' ' -f1 | head -n 1)
+latest_blossom=$(docker exec nessie-cli nessie-app-version blossom | grep master | cut -d ' ' -f1 | head -n 1)
+latest_bubbles=$(docker exec nessie-cli nessie-app-version bubbles | grep master | cut -d ' ' -f1 | head -n 1)
+
+echo releasing fuzzylumpkins $latest_fuzzylumpkins...
+docker exec nessie-cli nessie-service --vpn devvpn release create --promote qa2 node fuzzylumpkins $latest_fuzzylumpkins
+
+echo releasing mojo-jojo $latest_mojojojo...
+docker exec nessie-cli nessie-service --vpn devvpn release create --promote qa2 node mojo-jojo $latest_mojojojo
+
+echo releasing him $latest_him...
+docker exec nessie-cli nessie-service --vpn devvpn release create --promote qa2 node him $latest_him
+
+echo releasing blossom $latest_blossom...
+docker exec nessie-cli nessie-service --vpn devvpn release create --promote qa2 backoffice blossom $latest_blossom
+
+echo releasing bubbles $latest_bubbles...
+docker exec nessie-cli nessie-service --vpn devvpn release create --promote qa2 web bubbles $latest_bubbles
+
+docker stop nessie-cli
