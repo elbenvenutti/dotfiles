@@ -8,7 +8,7 @@ WORK_WINDOW=$SESSION:$PROJECT_NAME
 SRV_WINDOW=$SESSION:$SRV_NAME
 SECONDARY_PORT=$2
 
-tmux has-session -t $SESSION || tmux new-session -d -s "$SESSION"
+tmux has-session -t $SESSION || tmux new-session -d -s "$SESSION" -x 430 -y 85
 
 tmux new-window -n "$PROJECT_NAME"
 

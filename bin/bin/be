@@ -8,7 +8,7 @@ WORK_WINDOW=$SESSION:$PROJECT_NAME
 SRV_WINDOW=$SESSION:$SRV_NAME
 SECONDARY_PORT=$2
 
-tmux has-session -t $SESSION || tmux new-session -d -s "$SESSION"
+tmux has-session -t $SESSION || tmux new-session -d -s "$SESSION" -x 430 -y 85
 
 tmux new-window -n "$PROJECT_NAME"
 
@@ -21,10 +21,10 @@ tmux select-layout -t $WORK_WINDOW main-vertical
 tmux resize-pane -t $WORK_WINDOW.2 -x 80
 
 tmux send-keys -t $WORK_WINDOW.1 C-m cd Space $WORKDIR C-m vim Space -S Space Session.vim C-m
-tmux send-keys -t $WORK_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space flow:watch C-m
-tmux send-keys -t $WORK_WINDOW.3 C-m cd Space $WORKDIR C-m yarn Space run Space lint:watch C-m
-tmux send-keys -t $WORK_WINDOW.4 C-m cd Space $WORKDIR C-m yarn Space run Space test:unit:watch C-m
-tmux send-keys -t $WORK_WINDOW.5 C-m cd Space $WORKDIR C-m yarn Space run Space test:integration:watch C-m
+tmux send-keys -t $WORK_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space lint:watch C-m
+tmux send-keys -t $WORK_WINDOW.3 C-m cd Space $WORKDIR C-m yarn Space run Space test:unit:watch C-m
+tmux send-keys -t $WORK_WINDOW.4 C-m cd Space $WORKDIR C-m yarn Space run Space test:integration:watch C-m
+tmux send-keys -t $WORK_WINDOW.5 C-m cd Space $WORKDIR C-m yarn Space run Space test:consumer:watch C-m
 
 tmux new-window -n "$SRV_NAME"
 tmux split-window -t $SRV_WINDOW -v
