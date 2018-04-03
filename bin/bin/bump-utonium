@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -e
+
+fetch_latest_utonium_version () {
+  cd ~/projects/utonium
+  git fetch
+  git tag -l | grep master | sort -t - -k 2 -g | tail -n1
+}
+
+commit_description () {
+  cd ~/projects/utonium
+  local LAST_STORY="git log origin/master -1 --no-merges"
+  local SUBJECT=$($LAST_STORY --pretty=%s)
+  local LINK=$($LAST_STORY --pretty=%b | tail -n 2 | head)
+  echo $SUBJECT
+  echo ""
+  echo - bump utonium
+  echo ""
+  echo $LINK
+}
+
+bump () {
+  local project=$1
+  echo switching to ~/projects/$project...
+  cd ~/projects/$project
+  echo checking out master...
+  git checkout master
+  echo pulling...
+  git pull
+  echo unlinking utonium...
+  yarn unlink utonium
+  echo bumping utonium version to $latest
+  sed -i -E "s/utonium.git#build-[0-9]+-master/utonium.git#$latest/" package.json
+  echo building...
+  mvn clean verify
+  echo commiting...
+  git add package.json yarn.lock
+  git ci -m "$message"
+}
+
+latest=$(fetch_latest_utonium_version)
+message=$(commit_description)
+(bump "bubbles")
+(bump "blossom")
+(cd ~/projects/bubbles && git push)
+(cd ~/projects/blossom && git push)
