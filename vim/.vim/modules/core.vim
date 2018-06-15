@@ -48,7 +48,9 @@ set t_Co=256
 
 syntax enable
 
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 
 set encoding=utf8
 
