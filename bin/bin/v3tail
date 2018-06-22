@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+tail $@ | xargs -L1 --delimiter='\n' -n1 python -c 'import json,sys; \
+d = json.loads(sys.argv[1]); \
+print("\033[33m", d["timestamp"], "\033[32m", d["level"], "\033[0m", d["message"], "\033[0m");';
