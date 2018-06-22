@@ -32,6 +32,6 @@ tmux split-window -t $SRV_WINDOW -v
 
 tmux send-keys -t $SRV_WINDOW.1 C-m cd Space $WORKDIR C-m yarn Space run Space build:watch C-m
 tmux send-keys -t $SRV_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space start:watch C-m
-tmux send-keys -t $SRV_WINDOW.3 C-m cd Space $WORKDIR C-m tail Space -f Space logs/$PROJECT_NAME.log C-m
+tmux send-keys -t $SRV_WINDOW.3 C-m cd Space $WORKDIR C-m v3tail Space -f Space logs/$PROJECT_NAME.log C-m
 
 tmux select-layout -t $SRV_WINDOW even-horizontal
