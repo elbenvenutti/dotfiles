@@ -69,6 +69,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'wesQ3/vim-windowswap'
+Plug 'mileszs/ack.vim'
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'
