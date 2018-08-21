@@ -7,7 +7,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer'}
+Plug 'Valloric/YouCompleteMe', { 'do': 'npm install -g typescript && ./install.py'}
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'embear/vim-localvimrc'
@@ -70,6 +70,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'mileszs/ack.vim'
+Plug 'alessioalex/syntastic-local-tslint.vim'
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'
