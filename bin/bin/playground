@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+ssh playground \
+  -L9543:murphy.buyflow.playground.internal.qmetric.co.uk:80 \
+  -L6660:sherlock.backoffice.playground.internal.qmetric.co.uk:80 \
+  -L2203:ownership.ownership.playground.internal.qmetric.co.uk:80 \
+  -L11004:web-bo-documentation-read-model.comms.playground.internal.qmetric.co.uk:80
+
