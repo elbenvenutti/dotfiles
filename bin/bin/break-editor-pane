@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+source ./tmux-utils.sh
+
+tmux break-pane -s$WORK_WINDOW.1
+tmux rename-window $PROJECT_NAME
+
+tmux select-layout -t $WORK_WINDOW even-horizontal

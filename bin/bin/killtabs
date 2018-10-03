@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source tmux-utils.sh
+
+tmux kill-window -t $SRV_WINDOW
+tmux kill-window -t $WORK_WINDOW

@@ -1,23 +1,16 @@
 #!/usr/bin/env bash
-
-SESSION=dev
-WORKDIR=~/projects/$1
-PROJECT_NAME=$1
-SRV_NAME=${1}Services
-WORK_WINDOW=$SESSION:$PROJECT_NAME
+source tmux-utils.sh
 
 tmux has-session -t $SESSION || tmux new-session -d -s "$SESSION"
 
-tmux new-window -n "$PROJECT_NAME"
+tmux new-window -t $SESSION -n "$PROJECT_NAME"
 
-tmux split-window -t $WORK_WINDOW -v
-tmux split-window -t $WORK_WINDOW -v
-tmux split-window -t $WORK_WINDOW -v
+split_window $WORK_WINDOW 3
 
 tmux select-layout -t $WORK_WINDOW main-vertical
 tmux resize-pane -t $WORK_WINDOW.2 -x 80
 
-tmux send-keys -t $WORK_WINDOW.1 C-m cd Space $WORKDIR C-m vim Space -S Space Session.vim C-m
-tmux send-keys -t $WORK_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space flow:watch C-m
-tmux send-keys -t $WORK_WINDOW.3 C-m cd Space $WORKDIR C-m yarn Space run Space lint:watch C-m
-tmux send-keys -t $WORK_WINDOW.4 C-m cd Space $WORKDIR C-m yarn Space run Space test:watch C-m
+send_work_keys 1 "nvim -S"
+send_work_keys 2 "yarn run flow:watch"
+send_work_keys 3 "yarn run lint:watch"
+send_work_keys 4 "yarn run test:watch"

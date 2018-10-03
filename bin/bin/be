@@ -1,37 +1,26 @@
 #!/usr/bin/env bash
-
-SESSION=dev
-WORKDIR=~/projects/$1
-PROJECT_NAME=$1
-SRV_NAME=${1}Services
-WORK_WINDOW=$SESSION:$PROJECT_NAME
-SRV_WINDOW=$SESSION:$SRV_NAME
-SECONDARY_PORT=$2
+source tmux-utils.sh
 
 tmux has-session -t $SESSION || tmux new-session -d -s "$SESSION" -x 430 -y 85
 
-tmux new-window -n "$PROJECT_NAME"
+tmux new-window -t $SESSION -n "$PROJECT_NAME"
 
-tmux split-window -t $WORK_WINDOW -v
-tmux split-window -t $WORK_WINDOW -v
-tmux split-window -t $WORK_WINDOW -v
-tmux split-window -t $WORK_WINDOW -v
+split_window $WORK_WINDOW 4
 
 tmux select-layout -t $WORK_WINDOW main-vertical
 tmux resize-pane -t $WORK_WINDOW.2 -x 80
 
-tmux send-keys -t $WORK_WINDOW.1 C-m cd Space $WORKDIR C-m vim Space -S Space Session.vim C-m
-tmux send-keys -t $WORK_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space lint:watch C-m
-tmux send-keys -t $WORK_WINDOW.3 C-m cd Space $WORKDIR C-m yarn Space run Space test:unit:watch C-m
-tmux send-keys -t $WORK_WINDOW.4 C-m cd Space $WORKDIR C-m yarn Space run Space test:integration:watch C-m
-tmux send-keys -t $WORK_WINDOW.5 C-m cd Space $WORKDIR C-m yarn Space run Space test:consumer:watch C-m
+send_work_keys 1 "nvim -S"
+send_work_keys 2 "yarn run lint:watch"
+send_work_keys 3 "yarn run test:unit:watch"
+send_work_keys 4 "yarn run test:integration:watch"
+send_work_keys 5 "yarn run test:consumer:watch"
 
-tmux new-window -n "$SRV_NAME"
-tmux split-window -t $SRV_WINDOW -v
-tmux split-window -t $SRV_WINDOW -v
+tmux new-window -t $SESSION -n "$SRV_NAME"
+split_window $SRV_WINDOW 2
 
-tmux send-keys -t $SRV_WINDOW.1 C-m cd Space $WORKDIR C-m yarn Space run Space build:watch C-m
-tmux send-keys -t $SRV_WINDOW.2 C-m cd Space $WORKDIR C-m yarn Space run Space start:watch C-m
-tmux send-keys -t $SRV_WINDOW.3 C-m cd Space $WORKDIR C-m v3tail Space -f Space logs/$PROJECT_NAME.log C-m
+send_srv_keys 1 "yarn run build:watch"
+send_srv_keys 2 "yarn run start:watch"
+send_srv_keys 3 "v3tail -f logs/$PROJECT_NAME.log"
 
 tmux select-layout -t $SRV_WINDOW even-horizontal
