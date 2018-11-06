@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+pygmentize -f terminal256 -O style=native -g $1
