@@ -56,7 +56,7 @@ Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'elzr/vim-json'
 " Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
-Plug 'sukima/xmledit'
+" Plug 'sukima/xmledit'
 Plug 'junkblocker/patchreview-vim'
 Plug 'codegram/vim-codereview'
 Plug 'sheerun/vim-polyglot'
@@ -65,6 +65,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'mileszs/ack.vim'
 Plug 'alessioalex/syntastic-local-tslint.vim'
+Plug 'Olical/vim-enmasse'
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'
