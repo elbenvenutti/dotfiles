@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+BACKUP=cf.old.json
+TEMPLATE=cf.json
+
+mv $TEMPLATE $BACKUP && jq ".Mappings.Applications.$1.Version = \"$2\"" $BACKUP > $TEMPLATE && rm $BACKUP

@@ -17,6 +17,10 @@ set expandtab
 " Enable mouse. Great for resizing windows and keeping co-workers sane.
 set mouse=a
 
+" Smart case. Override with \c or \C
+set ignorecase
+set smartcase
+
 " Disable swap files.
 " set noswapfile
 
