@@ -64,6 +64,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'mileszs/ack.vim'
 Plug 'alessioalex/syntastic-local-tslint.vim'
+Plug 'Olical/vim-enmasse'
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'

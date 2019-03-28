@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+FUZZYLUMPKINS_HOST=$(ssh playground 'nessie-service-info --environment backoffice fuzzylumpkins | grep http | head -n 1 | cut -d/ -f3 | cut -d: -f1' 2>&1 |tail -n1)
+
+echo $FUZZYLUMPKINS_HOST
