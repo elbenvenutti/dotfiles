@@ -2,6 +2,10 @@
 
 set -e
 
+BACKUP=package.old.json
+TEMPLATE=package.json
+
+
 fetch_latest_utonium_version () {
   cd ~/projects/utonium
   git fetch
@@ -32,6 +36,7 @@ bump () {
   yarn unlink utonium
   echo bumping utonium version to $latest
   sed -i -E "s/utonium.git#build-[0-9]+-master/utonium.git#$latest/" package.json
+  mv $TEMPLATE $BACKUP && jq ".dependencies.utonium = \"git+ssh://git@github.com/qmetric/utonium.git#$latest\"" $BACKUP > $TEMPLATE && rm $BACKUP
   echo building...
   mvn clean verify
   echo commiting...
