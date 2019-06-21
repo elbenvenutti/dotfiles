@@ -65,6 +65,7 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'mileszs/ack.vim'
 Plug 'alessioalex/syntastic-local-tslint.vim'
 Plug 'Olical/vim-enmasse'
+Plug 'prettier/vim-prettier'
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'
