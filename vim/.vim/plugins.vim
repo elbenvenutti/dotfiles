@@ -7,7 +7,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe', { 'do': 'npm install -g typescript && ./install.py'}
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'embear/vim-localvimrc'
@@ -15,11 +14,9 @@ Plug 'guns/vim-sexp'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'junegunn/vim-easy-align'
-Plug 'marijnh/tern_for_vim', { 'do': 'yarn' }
 Plug 'mhinz/vim-signify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'raymond-w-ko/vim-niji'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -36,7 +33,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-" Plug 'vim-scripts/SyntaxComplete'
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
@@ -44,7 +40,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-obsession'
 Plug 'altercation/vim-colors-solarized'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'tmhedberg/indent-motion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
@@ -65,6 +61,9 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'mileszs/ack.vim'
 Plug 'alessioalex/syntastic-local-tslint.vim'
 Plug 'Olical/vim-enmasse'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Not used in current projects
 " Plug 'nikvdp/ejs-syntax'
