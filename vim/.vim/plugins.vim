@@ -55,7 +55,7 @@ Plug 'djoshea/vim-autoread'
 Plug 'junkblocker/patchreview-vim'
 Plug 'codegram/vim-codereview'
 Plug 'sheerun/vim-polyglot'
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'mileszs/ack.vim'
