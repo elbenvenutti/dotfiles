@@ -23,6 +23,6 @@ split_window $SRV_WINDOW 2
 
 send_srv_keys 1 "yarn run dyson"
 send_srv_keys 2 "yarn run start"
-send_srv_keys 3 "NODE_ENV=local yarn run start -- --port=$SECONDARY_PORT"
+[ -z "$SECONDARY_PORT" ] && send_srv_keys 3 "NODE_ENV=local yarn run start -- --port=$SECONDARY_PORT"
 
 tmux select-layout -t $SRV_WINDOW even-horizontal
