@@ -20,7 +20,6 @@ Plug 'raymond-w-ko/vim-niji'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
-" Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -40,7 +39,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-obsession'
 Plug 'altercation/vim-colors-solarized'
-" Plug 'ervandew/supertab'
 Plug 'tmhedberg/indent-motion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
@@ -50,13 +48,11 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'elzr/vim-json'
-" Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
 Plug 'junkblocker/patchreview-vim'
 Plug 'codegram/vim-codereview'
 Plug 'sheerun/vim-polyglot'
-" Plug 'Quramy/tsuquyomi'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'mileszs/ack.vim'
 Plug 'alessioalex/syntastic-local-tslint.vim'
@@ -64,10 +60,4 @@ Plug 'Olical/vim-enmasse'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-" Not used in current projects
-" Plug 'nikvdp/ejs-syntax'
-" Plug 'walm/jshint.vim'
-" Plug 'burnettk/vim-angular'
-" Plug 'artur-shaik/vim-javacomplete2'
-" Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'derekwyatt/vim-scala'
