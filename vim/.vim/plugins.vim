@@ -61,3 +61,4 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'derekwyatt/vim-scala'
+Plug 'frazrepo/vim-rainbow'
