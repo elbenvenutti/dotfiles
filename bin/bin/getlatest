@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git ls-remote --refs --tags git@github.com:qmetric/$1.git |grep build |grep $2 |cut -f2|cut -d- -f2-|sort -g|tail -n1
+

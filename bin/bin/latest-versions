@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-getlatest() {
-  git ls-remote --refs --tags git@github.com:qmetric/$1.git |grep build |grep master |cut -f2|cut -d- -f2,3|sort -g|tail -n1
-}
+# getlatest() {
+#   git ls-remote --refs --tags git@github.com:qmetric/$1.git |grep build |grep master |cut -f2|cut -d- -f2,3|sort -g|tail -n1
+# }
 
-echo "bump-cf-versions V3UiFeed `getlatest v3-ui-feed` && \\"
-echo "bump-cf-versions FuzzyLumpkins `getlatest fuzzylumpkins` && \\"
-echo "bump-cf-versions Him `getlatest him` && \\"
-echo "bump-cf-versions Blossom `getlatest blossom`"
+echo "bump-cf-versions V3UiFeed `getlatest v3-ui-feed master` && \\"
+echo "bump-cf-versions FuzzyLumpkins `getlatest fuzzylumpkins master` && \\"
+echo "bump-cf-versions Him `getlatest him master` && \\"
+echo "bump-cf-versions Blossom `getlatest blossom master`"
 echo ===================
-echo "bump-cf-versions V3UiFeed `getlatest v3-ui-feed` && \\"
-echo "bump-cf-versions FuzzyLumpkins `getlatest fuzzylumpkins` && \\"
-echo "bump-cf-versions MojoJojo `getlatest mojo-jojo` && \\"
-echo "bump-cf-versions Bubbles `getlatest bubbles`"
+echo "bump-cf-versions V3UiFeed `getlatest v3-ui-feed master` && \\"
+echo "bump-cf-versions FuzzyLumpkins `getlatest fuzzylumpkins master` && \\"
+echo "bump-cf-versions MojoJojo `getlatest mojo-jojo master` && \\"
+echo "bump-cf-versions Bubbles `getlatest bubbles master`"
 
