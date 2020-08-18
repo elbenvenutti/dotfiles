@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo nimbus stack deploy playground v3uat-$1 $1-bounded-context:`getlatest $1-bounded-context RELEASE-CANDIDATE` --parameters v3uat --exec --follow
+echo nimbus stack deploy playground v3uat-$1 $1-bounded-context:`getlatest $1-bounded-context RELEASE-CANDIDATE` --parameters v3uat --exec --wait

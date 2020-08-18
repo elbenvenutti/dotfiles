@@ -61,6 +61,16 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+nmap <leader>gd <C-w>vgd
+nmap <leader>gy <C-w>vgy
+nmap <leader>gi <C-w>vgi
+nmap <leader>gr <C-w>vgr
+
+nmap <leader><leader>gd <C-w>sgd
+nmap <leader><leader>gy <C-w>sgy
+nmap <leader><leader>gi <C-w>sgi
+nmap <leader><leader>gr <C-w>sgr
+
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 

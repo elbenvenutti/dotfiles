@@ -5,5 +5,5 @@
 
 " show hidden files by default
 
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=0
 let NERDTreeRespectWildIgnore=1

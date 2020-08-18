@@ -24,7 +24,7 @@
   out = log origin..HEAD
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
   lola = log --pretty=oneline --abbrev-commit --graph --decorate --all
-  hist = log --color --pretty=format:\"%C(yellow)%h %C(green)%ad %C(reset) %s%C(bold red)%d%C(reset) %C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate
+  hist = log --color --pretty=format:\"%C(yellow)%h %C(green)%ai %ad %C(reset) %s%C(bold red)%d%C(reset) %C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate
   unstage = reset HEAD
   undocommit = git reset --soft HEAD^
   diff = difftool
