@@ -11,6 +11,8 @@
     "js",
     "jsx",
     "json",
+    "ts",
+    "tsx",
     "typescript",
     "typescriptreact",
     "javascriptreact",

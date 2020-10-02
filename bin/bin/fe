@@ -12,7 +12,7 @@ split_window $WORK_WINDOW 4
 tmux select-layout -t $WORK_WINDOW main-vertical
 tmux resize-pane -t $WORK_WINDOW.2 -x 80
 
-send_work_keys 1 "nvm use 10 && vim -S"
+send_work_keys 1 "vim -S"
 send_work_keys 2 "yarn run flow:watch"
 send_work_keys 3 "yarn run lint:watch"
 send_work_keys 4 "yarn run test:unit:watch"
