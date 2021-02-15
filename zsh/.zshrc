@@ -9,7 +9,7 @@ fi
 export PATH=/usr/local/sbin:/usr/local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ismael.perez/.oh-my-zsh"
+export ZSH="/Users/ismaelperez/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -113,5 +113,5 @@ source $HOME/Dropbox/zshrc
 
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
-export SDKMAN_DIR="/Users/ismael.perez/.sdkman"
-[[ -s "/Users/ismael.perez/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ismael.perez/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/ismaelperez/.sdkman"
+[[ -s "/Users/ismaelperez/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ismaelperez/.sdkman/bin/sdkman-init.sh"
