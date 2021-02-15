@@ -1,13 +1,16 @@
 [user]
   name = Isma Perez
-  email = iperez@qmetric.co.uk
+  email = ismael.perez@intenthq.com
+
 [core]
-  excludesfile = .gitignore_global
+  excludesfile = /Users/ismaelperez/.gitignore_global
   editor = vim
+
 [color]
   diff = auto
   status = auto
   branch = auto
+
 [alias]
   s = stash
   sp = stash pop
@@ -31,16 +34,21 @@
   branches = !git-branches
   retrack = "!retrack() { git config \"branch.$1.remote\" $(dirname \"$2\"); git config \"branch.$1.merge\" \"refs/heads/$(basename \"$2\")\"; };retrack"
   cp = cherry-pick
+
 [push]
   default = current
+
 [branch "master"]
   rebase = true
+
 [branch]
   autosetuprebase = always
+
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   required = true
   process = git-lfs filter-process
+
 [merge]
   tool = vimdiff
