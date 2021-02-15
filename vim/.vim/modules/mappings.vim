@@ -30,3 +30,5 @@ nnoremap ]w :tabnext<cr>
 nnoremap [w :tabprev<cr>
 
 nnoremap <leader>ag :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+nnoremap 00 ^
