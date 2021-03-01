@@ -5,7 +5,6 @@ let g:indent_guides_guide_size=1
 
 augroup indent_guide_settings
   autocmd!
-  " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=white ctermbg=234
   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermfg=white ctermbg=236
   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=white ctermbg=black
 augroup END
