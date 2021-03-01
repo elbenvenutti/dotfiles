@@ -20,9 +20,9 @@
     "less",
     "scss"
   ],
-  "coc.preferences.formatOnType": false,
+  "coc.preferences.formatOnType": true,
   "tsserver.formatOnType": false,
-  "prettier.tslintIntegration": true,
+  "prettier.tslintIntegration": false,
   "prettier.eslintIntegration": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false
 }
