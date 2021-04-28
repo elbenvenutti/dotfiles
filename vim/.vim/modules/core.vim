@@ -65,22 +65,6 @@ endif
 
 set wildmode=longest,list
 
-function! Light()
-    set background=light
-    colorscheme solarized
-    !kitty @ --to=unix:/tmp/kitty.sock-$(pgrep kitty) set-colors ~/.config/kitty/light.conf
-    :hi IndentGuidesEven ctermfg=white ctermbg=black
-    :hi IndentGuidesOdd ctermfg=white ctermbg=254
-endfunction
-
-function! Dark()
-    set background=dark
-    colorscheme solarized
-    !kitty @ --to=unix:/tmp/kitty.sock-$(pgrep kitty) set-colors ~/.config/kitty/dark.conf
-    :hi IndentGuidesEven ctermfg=white ctermbg=236
-    :hi IndentGuidesOdd ctermfg=white ctermbg=black
-endfunction
-
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 endif

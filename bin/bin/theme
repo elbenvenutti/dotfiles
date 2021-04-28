@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo $1 > /tmp/kitty-theme
+
+kitty @ --to=unix:/tmp/kitty.sock-$(pgrep kitty) set-colors ~/.config/kitty/$1.conf

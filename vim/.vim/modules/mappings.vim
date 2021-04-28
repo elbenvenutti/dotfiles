@@ -20,8 +20,6 @@ nnoremap <leader>zi :setlocal foldmethod=indent<cr>
 nnoremap <leader>zs :setlocal foldmethod=syntax<cr>
 nnoremap <leader>zm :setlocal foldmethod=manual<cr>
 
-nnoremap <leader>l :call Light()<cr>
-nnoremap <leader>d :call Dark()<cr>
 nnoremap <leader>0 :redraw!<cr>
 
 nnoremap <leader>gf <C-w>vgf
