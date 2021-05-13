@@ -7,6 +7,7 @@ colorscheme solarized
 function! Light()
     set background=light
     colorscheme solarized
+    syntax on
     :hi IndentGuidesEven ctermfg=white ctermbg=black
     :hi IndentGuidesOdd ctermfg=white ctermbg=254
 endfunction
@@ -14,6 +15,7 @@ endfunction
 function! Dark()
     set background=dark
     colorscheme solarized
+    syntax on
     :hi IndentGuidesEven ctermfg=white ctermbg=236
     :hi IndentGuidesOdd ctermfg=white ctermbg=black
 endfunction
