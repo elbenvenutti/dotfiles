@@ -6,7 +6,6 @@
       "filetypes": ["scala", "sbt"]
     }
   },
-  // Needed for type formatting on multiline strings
   "coc.preferences.formatOnSaveFiletypes": [
     "js",
     "jsx",
@@ -18,11 +17,21 @@
     "javascriptreact",
     "css",
     "less",
-    "scss"
+    "scss",
+    "scala"
   ],
   "coc.preferences.formatOnType": true,
   "tsserver.formatOnType": false,
   "prettier.tslintIntegration": false,
   "prettier.eslintIntegration": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+
+  "codeLens.enable": true,
+  "diagnostic.enable": true,
+  "diagnostic.virtualText": true,
+  "metals.showInferredType": true,
+  "metals.showImplicitArguments": true,
+  "metals.statusBarEnabled": true,
+  "metals.showImplicitConversionsAndClasses": true,
+  "metals.superMethodLensesEnabled": true
 }
