@@ -1,10 +1,16 @@
+[include]
+	path = ~/.gitconfig-local
+
 [user]
   name = Isma Perez
   email = ismael.perez@intenthq.com
 
 [core]
   excludesfile = /Users/ismaelperez/.gitignore_global
-  editor = vim
+  editor = nvim
+[init]
+	defaultBranch = main
+
 
 [color]
   diff = auto
@@ -16,24 +22,12 @@
   sp = stash pop
   co = checkout
   ci = commit
-  rb = rebase
   st = status
-  c = commit -m
-  di = diff
-  dc = diff --cached
-  p = pull
-  ps = push
-  plre = pull --rebase
-  out = log origin..HEAD
+  diff = difftool
+  cp = cherry-pick
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
   lola = log --pretty=oneline --abbrev-commit --graph --decorate --all
   hist = log --color --pretty=format:\"%C(yellow)%h %C(green)%ai %ad %C(reset) %s%C(bold red)%d%C(reset) %C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate
-  unstage = reset HEAD
-  undocommit = git reset --soft HEAD^
-  diff = difftool
-  branches = !git-branches
-  retrack = "!retrack() { git config \"branch.$1.remote\" $(dirname \"$2\"); git config \"branch.$1.merge\" \"refs/heads/$(basename \"$2\")\"; };retrack"
-  cp = cherry-pick
 
 [push]
   default = current
@@ -50,5 +44,14 @@
   required = true
   process = git-lfs filter-process
 
+[diff]
+  tool = nvim
+
 [merge]
-  tool = vimdiff
+  tool  = nvim
+
+[difftool "nvim"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+[mergetool "nvim"]
+  cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
