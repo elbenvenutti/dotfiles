@@ -13,11 +13,6 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-signify'
-if has('conceal')
-  Plug 'Yggdroot/indentLine'
-else
-  Plug 'nathanaelkane/vim-indent-guides'
-endif
 Plug 'raymond-w-ko/vim-niji'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -40,8 +35,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-obsession'
-Plug 'overcache/NeoSolarized'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tmhedberg/indent-motion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mbbill/undotree'
@@ -68,11 +61,16 @@ if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'fannheyward/telescope-coc.nvim'
+  Plug 'lukas-reineke/indent-blankline.nvim'
+	Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+  Plug 'nvim-treesitter/nvim-treesitter'
 else
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
+  Plug 'nathanaelkane/vim-indent-guides'
+	Plug 'altercation/vim-colors-solarized'
 endif
 Plug 'simeji/winresizer'
 Plug 'liuchengxu/vista.vim'
