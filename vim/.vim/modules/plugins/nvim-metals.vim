@@ -1,4 +1,4 @@
-lua << EOF
+lua <<EOF
 
 -------------------------------------------------------------------------------
 -- These are example settings to use with nvim-metals and the nvim built-in
@@ -37,8 +37,8 @@ end
 -- OPTIONS -----------------------
 ----------------------------------
 -- global
-vim.opt_global.completeopt = { "menu", "noinsert", "noselect" }
-vim.opt_global.shortmess:remove("F"):append("c")
+vim.opt_global.completeopt = { "menu", "menuone", "noinsert", "noselect" }
+--vim.opt_global.shortmess:remove("F"):append("c")
 
 -- LSP mappings
 map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
@@ -74,41 +74,47 @@ map("n", "]g", "<cmd>lua vim.diagnostic.goto_next { wrap = false }<CR>")
 
 -- completion related settings
 -- This is similiar to what I use
-local cmp = require("cmp")
-cmp.setup({
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "ultisnips" },
-  },
-  snippet = {
-    expand = function(args)
+-- local cmp = require("cmp")
+
+--cmp.setup({
+  --sources = cmp.config.sources({
+      --{ name = 'nvim_lsp' },
+      -- { name = 'vsnip' }, -- For vsnip users.
+      -- { name = 'luasnip' }, -- For luasnip users.
+      --{ name = 'ultisnips' }, -- For ultisnips users.
+      -- { name = 'snippy' }, -- For snippy users.
+    --}, {
+      --{ name = 'buffer' },
+    --}),
+  --snippet = {
+    --expand = function(args)
       -- Comes from vsnip
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert({
+      --vim.fn["UltiSnips#Anon"](args.body)
+    --end,
+  --},
+  --mapping = cmp.mapping.preset.insert({
     -- None of this made sense to me when first looking into this since there
     -- is no vim docs, but you can't have select = true here _unless_ you are
     -- also using the snippet stuff. So keep in mind that if you remove
     -- snippets you need to remove this select
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    -- ["<CR>"] = cmp.mapping.confirm({ select = true }),
     -- I use tabs... some say you should stick to ins-completion but this is just here as an example
-    ["<Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end,
-    ["<S-Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end,
-  }),
-})
+    -- ["<Tab>"] = function(fallback)
+      -- if cmp.visible() then
+        -- cmp.select_next_item()
+      -- else
+        -- fallback()
+      -- end
+    -- end,
+    -- ["<S-Tab>"] = function(fallback)
+      -- if cmp.visible() then
+        -- cmp.select_prev_item()
+      -- else
+        -- fallback()
+      -- end
+    -- end,
+  -- }),
+--})
 
 ----------------------------------
 -- LSP Setup ---------------------
@@ -130,7 +136,7 @@ metals_config.settings = {
 
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-metals_config.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- Debug settings if you're using nvim-dap
 local dap = require("dap")

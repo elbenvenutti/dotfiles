@@ -29,7 +29,7 @@ set backupdir=~/.vimbackup//
 set directory=~/.vimswap//
 
 " Write files as they are, don't mess with line endings etc.
-set binary
+" set binary
 
 " Disable the completion preview window.
 set completeopt-=preview
