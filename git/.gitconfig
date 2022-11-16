@@ -8,9 +8,9 @@
 [core]
   excludesfile = /Users/ismaelperez/.gitignore_global
   editor = nvim
+
 [init]
 	defaultBranch = main
-
 
 [color]
   diff = auto
@@ -55,3 +55,9 @@
 
 [mergetool "nvim"]
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
