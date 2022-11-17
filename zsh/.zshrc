@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/sbin:/usr/local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ismaelperez/.oh-my-zsh"
@@ -15,8 +15,7 @@ export ZSH="/Users/ismaelperez/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize colored-man-pages command-not-found copybuffer gnu-utils nvm npm vi-mode yarn)
+plugins=(git colorize fzf npm vi-mode docker docker-compose aws kubectl kubectx sbt)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -106,12 +106,26 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source $HOME/Dropbox/zshrc
-
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/ismaelperez/.sdkman"
 [[ -s "/Users/ismaelperez/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ismaelperez/.sdkman/bin/sdkman-init.sh"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/opt/python@3.8/bin:/usr/local/opt/ruby/bin:$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export JEP_PATH="/usr/local/lib/python3.8/site-packages/jep/"
+eval "$(direnv hook zsh)"
+
+alias tssh-cbl-canary-es='tssh login cbl && tsh ssh -L 9207:localhost:9200 core@es-live-a-0.ssh.cbl.ihq.sh'
+alias dnsrefresh='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
+alias k='kubectl'
+
+export LESS=-FRX
+export IHQ_AWS_ROOT_ACCOUNT="071494471915"
+export OKTA_AWS_ROLE_TO_ASSUME="CA-EngineerAccessRole"
+OKTA_AWS_ROLE_TO_ASSUME=CA-EngineerAccessRole
