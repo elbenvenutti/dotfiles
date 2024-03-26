@@ -59,4 +59,18 @@ M.trouble = {
     ["gr"] = {function() require("trouble").open("lsp_references") end, "LSP references",},
   }
 }
+
+M.lspconfig = {
+  plugin = true,
+
+  n = {
+    ["<leader>ra"] = {
+      function()
+        vim.lsp.buf.rename()
+      end,
+      "LSP rename",
+    },
+  }
+
+}
 return M
