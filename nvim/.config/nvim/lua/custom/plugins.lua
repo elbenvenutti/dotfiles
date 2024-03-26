@@ -48,21 +48,42 @@ local plugins = {
       vim.fn["camelcasemotion#CreateMotionMappings"]('<leader>')
     end,
   },
-  { "christoomey/vim-tmux-navigator", event = "VimEnter" },
+  { "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>" },
+      { "<c-j>" },
+      { "<c-k>" },
+      { "<c-l>" },
+      { "<c-\\>" },
+    },
+  },
   { "djoshea/vim-autoread", event = "BufEnter" },
   { "easymotion/vim-easymotion", event = "BufEnter" },
   { "jeffkreeftmeijer/vim-numbertoggle", event = "BufEnter" },
   { "junegunn/gv.vim", event = "VimEnter" },
   {
     "mbbill/undotree",
-    event = "BufEnter",
+    cmd = {
+      "UndotreeFocus",
+      "UndotreeHide",
+      "UndotreePersistUndo",
+      "UndotreeShow",
+      "UndotreeToggle",
+    },
     init = function()
       require("core.utils").load_mappings "undotree"
     end,
   },
   {
     "mileszs/ack.vim",
-    event = "VimEnter",
+    cmd = { "Ack", "AckAdd", "AckFile", "AckFromSearch", "AckHelp", "AckWindow" },
     init = function ()
       require "custom.configs.ack"
     end
