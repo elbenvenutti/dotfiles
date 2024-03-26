@@ -110,6 +110,19 @@ local plugins = {
   { "tpope/vim-surround", event = "BufEnter" },
   { "tpope/vim-unimpaired", event = "VimEnter" },
   { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, cmd = {"Trouble", "TroubleToggle"}},
+  {
+    "nvim-neorg/neorg",
+    cmd = {"Neorg"},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-neorg/neorg-telescope",
+    },
+    build = ":Neorg sync-parsers",
+    init = function()
+      require("custom.configs.neorg")
+    end,
+  },
 }
 
 return plugins
