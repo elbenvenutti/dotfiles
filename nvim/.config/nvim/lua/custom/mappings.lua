@@ -3,11 +3,15 @@ local M = {}
 M.general = {
   n = {
     ["<leader>zi"] = { ":setlocal foldmethod=indent<CR>", "Set foldmethod indent"},
-    ["<leader>zs"] = { ":setlocal foldmethod=syntax<CR>", "Set foldmethod syntax"},
+    ["<leader>zs"] = { ":setlocal foldmethod=expr<CR>:setlocal foldexpr=nvim_treesitter#foldexpr()<CR>", "Set foldmethod expr + treesitter"},
     ["<leader>zm"] = { ":setlocal foldmethod=manual<CR>", "Set foldmethod manual"},
     ["]w"] = { ":tabnext<CR>", "Next tab"},
     ["[w"] = { ":tabnext<CR>", "Previous tab"},
     ["00"] = { "^", "Go to first nonspace character"},
+  },
+  i = {
+    [":w<CR>"] = { "<esc>:w<CR>"},
+    [":wq<CR>"] = { "<esc>:wq<CR>"}
   }
 }
 
@@ -23,7 +27,8 @@ M.disabled = {
     ["<C-l>"] = "",
     ["<C-j>"] = "",
     ["<C-k>"] = "",
-  }
+    ["<leader>x"] = "",
+  },
 }
 
 M.telescope = {
