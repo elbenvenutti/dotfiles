@@ -111,14 +111,17 @@ local plugins = {
   { "tpope/vim-unimpaired", event = "VimEnter" },
   { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, cmd = {"Trouble", "TroubleToggle"}},
   {
+    "vhyrro/luarocks.nvim",
+    priority = 1000, -- We'd like this plugin to load first out of the rest
+    config = true, -- This automatically runs `require("luarocks-nvim").setup()`
+  },
+  {
     "nvim-neorg/neorg",
     cmd = {"Neorg"},
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
+      "luarocks.nvim",
       "nvim-neorg/neorg-telescope",
     },
-    build = ":Neorg sync-parsers",
     init = function()
       require("custom.configs.neorg")
     end,
