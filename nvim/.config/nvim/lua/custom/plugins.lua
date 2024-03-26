@@ -92,6 +92,15 @@ local plugins = {
   { "PeterRincker/vim-argumentative", event = "BufEnter" },
   -- { "sheerun/vim-polyglot", event = "BufEnter" },
   { "tmhedberg/indent-motion", event = "BufEnter" },
+  {
+    "tpope/vim-abolish",
+    -- cmd = { "Abolish", "Subvert" },
+    event = { "BufEnter" },
+    keys = { "crs", "crm", "crc", "cru", "cr-", "cr." },
+    config = function()
+      require "custom.configs.abolish"
+    end,
+  },
   { "tpope/vim-eunuch", event = "VimEnter" },
   { "tpope/vim-fugitive", event = "BufEnter"  },
   { "tpope/vim-obsession", event = "VimEnter" },
