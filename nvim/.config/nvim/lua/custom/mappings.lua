@@ -47,4 +47,16 @@ M.undotree = {
   }
 }
 
+M.trouble = {
+  -- plugin = true,
+
+  n = {
+    ["<leader>xx"] = {function() require("trouble").toggle() end, "toggle trouble",},
+    ["<leader>xw"] = {function() require("trouble").open("workspace_diagnostics") end, "workspace diagnostics",},
+    ["<leader>xd"] = {function() require("trouble").open("document_diagnostics") end, "document diagnostics",},
+    ["<leader>xq"] = {function() require("trouble").open("quickfix") end, "quickfix list",},
+    ["<leader>xl"] = {function() require("trouble").open("loclist") end, "location list",},
+    ["gr"] = {function() require("trouble").open("lsp_references") end, "LSP references",},
+  }
+}
 return M

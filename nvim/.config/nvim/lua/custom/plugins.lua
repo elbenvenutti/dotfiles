@@ -109,6 +109,7 @@ local plugins = {
   { "tpope/vim-sleuth", event = "BufEnter" },
   { "tpope/vim-surround", event = "BufEnter" },
   { "tpope/vim-unimpaired", event = "VimEnter" },
+  { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, cmd = {"Trouble", "TroubleToggle"}},
 }
 
 return plugins
