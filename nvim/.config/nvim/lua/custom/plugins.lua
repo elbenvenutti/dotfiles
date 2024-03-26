@@ -130,6 +130,31 @@ local plugins = {
       -- Your setup opts here
     },
   },
+  -- copying over from default to disable cmd
+  {
+    "nvim-tree/nvim-tree.lua",
+    init = function()
+      require("core.utils").load_mappings "nvimtree"
+    end,
+    opts = function()
+      return require "custom.configs.nvimtree"
+    end,
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "nvimtree")
+      require("nvim-tree").setup(opts)
+    end,
+  },
+  {
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-tree.lua",
+    },
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    config = function()
+      require("lsp-file-operations").setup()
+    end,
+  },
 }
 
 return plugins
