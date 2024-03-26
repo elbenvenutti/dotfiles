@@ -73,4 +73,13 @@ M.lspconfig = {
   }
 
 }
+
+M.outline = {
+  plugin = true,
+
+  n = {
+    ["<leader>o"] = { "<cmd> Outline <CR>", "Toggle Outline", }
+  }
+}
+
 return M

@@ -123,6 +123,13 @@ local plugins = {
       require("custom.configs.neorg")
     end,
   },
+  {
+    "hedyhli/outline.nvim",
+    cmd = { "Outline", "OutlineOpen" },
+    opts = {
+      -- Your setup opts here
+    },
+  },
 }
 
 return plugins
