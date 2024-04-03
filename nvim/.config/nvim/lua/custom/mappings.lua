@@ -35,7 +35,8 @@ M.telescope = {
   plugin = true,
 
   n = {
-    ["<c-p>"] = { "<cmd> Telescope find_files <CR>", "Find files" }
+    ["<c-p>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
+    ["gr"] = { "<cmd> Telescope lsp_references <CR>", "LSP references" },
   }
 }
 
@@ -56,7 +57,6 @@ M.trouble = {
     ["<leader>xd"] = {function() require("trouble").open("document_diagnostics") end, "document diagnostics",},
     ["<leader>xq"] = {function() require("trouble").open("quickfix") end, "quickfix list",},
     ["<leader>xl"] = {function() require("trouble").open("loclist") end, "location list",},
-    ["gr"] = {function() require("trouble").open("lsp_references") end, "LSP references",},
   }
 }
 
