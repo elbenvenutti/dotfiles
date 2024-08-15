@@ -214,7 +214,6 @@ local plugins = {
     event = {
       "BufEnter"
     }
-    end,
   },
 }
 
