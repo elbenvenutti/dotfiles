@@ -203,6 +203,17 @@ local plugins = {
         }
       })
     end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    cmd = {
+      "TSContextEnable",
+      "TSContextDisable",
+      "TSContextToggle",
+    },
+    event = {
+      "BufEnter"
+    }
     end,
   },
 }
