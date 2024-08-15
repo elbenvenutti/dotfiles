@@ -8,6 +8,7 @@ M.general = {
     ["]w"] = { ":tabnext<CR>", "Next tab"},
     ["[w"] = { ":tabnext<CR>", "Previous tab"},
     ["00"] = { "^", "Go to first nonspace character"},
+    ["<C-i>"] = { "<C-i>", opts = { noremap = true } },
   },
   i = {
     [":w<CR>"] = { "<esc>:w<CR>"},
@@ -28,6 +29,8 @@ M.disabled = {
     ["<C-j>"] = "",
     ["<C-k>"] = "",
     ["<leader>x"] = "",
+    ["<tab>"] = "",
+    ["<S-tab>"] = "",
   },
 }
 
