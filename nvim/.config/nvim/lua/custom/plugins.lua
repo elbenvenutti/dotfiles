@@ -156,8 +156,15 @@ local plugins = {
     cmd = { "NvimTreeFocus" },
     -- event = { "NvimTreeSetup" },
     config = true,
+  },
+  {
+    "rmagatti/goto-preview",
+    keys = { "gpd", "gPd", "gpt", "gpi", "gP", "gpr" },
     config = function()
-      require("lsp-file-operations").setup()
+      require("goto-preview").setup {
+        default_mappings = true,
+      }
+    end
     end,
   },
 }
