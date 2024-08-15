@@ -133,7 +133,7 @@ local plugins = {
       -- Your setup opts here
     },
   },
-  -- copying over from default to disable cmd
+  -- copying over from default to disable cmd and override config
   {
     "nvim-tree/nvim-tree.lua",
     init = function()
@@ -153,7 +153,9 @@ local plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-tree.lua",
     },
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    cmd = { "NvimTreeFocus" },
+    -- event = { "NvimTreeSetup" },
+    config = true,
     config = function()
       require("lsp-file-operations").setup()
     end,
