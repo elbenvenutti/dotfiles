@@ -215,6 +215,47 @@ local plugins = {
       "BufEnter"
     }
   },
+  {
+    "scalameta/nvim-metals",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    ft = { "scala", "sbt", "java" },
+    opts = function()
+      local metals_config = require("metals").bare_config()
+      metals_config.settings = {
+        inlayHints = {
+          hintsInPatternMatch = { enable = true },
+          implicitArguments = { enable = true },
+          implicitConversions = { enable = false },
+          inferredTypes = { enable = true },
+          typeParameters = { enable = true },
+        }
+      }
+      metals_config.on_attach = function(client, bufnr)
+        local augroup = vim.api.nvim_create_augroup('AutoFormatting', {})
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          callback = function()
+            vim.lsp.buf.format()
+          end,
+        })
+      end
+
+      return metals_config
+    end,
+    config = function(self, metals_config)
+      local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = self.ft,
+        callback = function()
+          require("metals").initialize_or_attach(metals_config)
+        end,
+        group = nvim_metals_group,
+      })
+    end
+  },
 }
 
 return plugins
