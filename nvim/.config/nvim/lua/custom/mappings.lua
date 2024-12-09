@@ -40,6 +40,7 @@ M.telescope = {
   n = {
     ["<c-p>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
     ["gr"] = { "<cmd> Telescope lsp_references <CR>", "LSP references" },
+    ["<leader>fd"] = { "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>", "LSP dynamic workspace symbols" },
   }
 }
 
@@ -219,6 +220,7 @@ M["nvim-metals"] = {
     },
   },
 }
+
 M.outline = {
   -- plugin = true,
 
