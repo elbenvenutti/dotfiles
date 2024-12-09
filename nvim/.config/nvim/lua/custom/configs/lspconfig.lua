@@ -11,6 +11,27 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig["ts_ls"].setup {
+  init_options = {
+    preferences = {
+      includeInlayEnumMemberValueHints = false,
+      includeInlayFunctionLikeReturnTypeHints = true,
+      includeInlayFunctionParameterTypeHints = true,
+      includeInlayParameterNameHints = 'all', -- 'none', 'literals', 'all'
+      includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      includeInlayPropertyDeclarationTypeHints = true,
+      includeInlayVariableTypeHints = true,
+    },
+  },
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+
+    -- vim.g.inlay_hints_visible = true
+    -- vim.lsp.inlay_hint.enable()
+  end,
+  capabilities = capabilities,
+}
+
 lspconfig["tailwindcss"].setup {
   hovers = true,
   suggestions = true,
