@@ -256,6 +256,17 @@ local plugins = {
       })
     end
   },
+  {
+    "j-hui/fidget.nvim",
+    event = "User FilePost",
+    opts = {
+      notification = {
+        window = {
+          winblend = 0,
+        },
+      },
+    }
+  },
 }
 
 return plugins
