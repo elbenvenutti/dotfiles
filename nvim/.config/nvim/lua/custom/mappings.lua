@@ -73,6 +73,14 @@ M.lspconfig = {
       end,
       "LSP rename",
     },
+
+    ["<leader>i"] = {
+      function()
+        vim.g.inlay_hints_visible = true
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0})
+      end,
+      "Toggle Inlay Hints"
+    },
   }
 
 }
