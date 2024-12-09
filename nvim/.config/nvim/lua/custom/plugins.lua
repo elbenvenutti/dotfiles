@@ -217,6 +217,45 @@ local plugins = {
     }
   },
   {
+    "https://gitlab.com/schrieveslaach/sonarlint.nvim.git",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+    },
+    event = "User FilePost",
+    config = function()
+      require("sonarlint").setup({
+        server = {
+          cmd = {
+            '/Users/ismaelperez/.local/share/nvim/mason/packages/sonarlint-language-server/sonarlint-language-server',
+            -- Ensure that sonarlint-language-server uses stdio channel
+            '-stdio',
+            '-analyzers',
+            -- paths to the analyzers you need, using those for python and java in this example
+            -- vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
+            -- vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
+            -- vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
+            -- vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
+            vim.fn.expand("/Users/ismaelperez/.local/share/nvim/mason/share/sonarlint-analyzers/sonar/sonarjs.jar"),
+            vim.fn.stdpath "data" .. "/mason/share/sonarlint-analyzers/sonarjava.jar",
+            vim.fn.stdpath "data" .. "/mason/share/sonarlint-analyzers/sonarjs.jar",
+          }
+        },
+        filetypes = {
+          -- Tested and working
+          -- 'python',
+          -- 'cpp',
+          -- 'java',
+          'javascript',
+          'typescript',
+          'typescriptreact',
+          'scala',
+          'sbt',
+          'java'
+        }
+      })
+    end
+  },
+  {
     "scalameta/nvim-metals",
     dependencies = {
       "nvim-lua/plenary.nvim",
