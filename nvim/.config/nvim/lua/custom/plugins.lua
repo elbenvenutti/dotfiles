@@ -34,10 +34,24 @@ local plugins = {
     opts = {
       ensure_installed = {
         "lua-language-server",
-        "html-lsp",
-        "lua-language-server",
+        "stylua",
+
+        "sonarlint-language-server",
+
         "typescript-language-server",
-        "stylua"
+        "eslint-lsp",
+
+        "html-lsp",
+
+        "stylelint-lsp",
+        "css-lsp",
+        "cssmodules-language-server",
+
+        "tailwindcss-language-server",
+
+        "json-lsp",
+
+        "marksman",
       },
     },
   },
