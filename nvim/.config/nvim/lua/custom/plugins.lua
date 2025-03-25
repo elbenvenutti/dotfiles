@@ -317,6 +317,7 @@ local plugins = {
     ft = { "scala", "sbt", "java" },
     opts = function()
       local metals_config = require("metals").bare_config()
+
       metals_config.settings = {
         inlayHints = {
           hintsInPatternMatch = { enable = true },
@@ -326,6 +327,7 @@ local plugins = {
           typeParameters = { enable = true },
         }
       }
+      metals_config.init_options.statusBarProvider = "off"
       metals_config.on_attach = function(client, bufnr)
         local augroup = vim.api.nvim_create_augroup('AutoFormatting', {})
         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
