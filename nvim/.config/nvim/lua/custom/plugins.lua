@@ -292,6 +292,19 @@ local plugins = {
     end
   },
   {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+    init = function ()
+      vim.g.codeium_disable_bindings = 1
+    end,
+    config = function()
+      vim.keymap.set('i', '<M-CR>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+      vim.keymap.set('i', '<M-Tab>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<M-S-Tab>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<M-Esc>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+    end
+  },
+  {
     "scalameta/nvim-metals",
     dependencies = {
       "nvim-lua/plenary.nvim",
