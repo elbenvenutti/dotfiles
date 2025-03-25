@@ -364,7 +364,10 @@ local plugins = {
   },
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-telescope/telescope-ui-select.nvim" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      --"nvim-telescope/telescope-ui-select.nvim"
+    },
     cmd = "Telescope",
     init = function()
       require("core.utils").load_mappings "telescope"
@@ -381,9 +384,14 @@ local plugins = {
       for _, ext in ipairs(opts.extensions_list) do
         telescope.load_extension(ext)
       end
-      telescope.load_extension("ui-select")
+      -- telescope.load_extension("ui-select")
     end,
   },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+    lazy = false
+  }
 }
 
 return plugins
