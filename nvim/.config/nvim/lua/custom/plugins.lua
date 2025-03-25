@@ -305,6 +305,10 @@ local plugins = {
     end
   },
   {
+    url = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git" ,
+    lazy = false
+  },
+  {
     "scalameta/nvim-metals",
     dependencies = {
       "nvim-lua/plenary.nvim",
