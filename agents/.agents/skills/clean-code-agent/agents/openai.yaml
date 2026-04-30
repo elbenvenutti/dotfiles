@@ -1,0 +1,3 @@
+interface:
+  display_name: "Clean Code Agent"
+  short_description: "Apply pragmatic clean-code review and refactoring heuristics."
